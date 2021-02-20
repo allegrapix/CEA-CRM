@@ -1,0 +1,78 @@
+@import "~src/styles/colors.scss";
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $yellow;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: europa, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form-group {
+  position: relative;
+  margin: 0 0 36px 0;
+
+  cea-validation-message {
+    @include position(absolute, 100%, null, null, 0);
+    color: $yellow;
+    width: 100%;
+  }
+
+  .form-label {
+    @include position(absolute, 0, null, 0, 0);
+    width: 15px;
+    background: $yellow;
+    z-index: 2;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .form-control {
+    background: $light-grey;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $yellow;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    position: relative;
+
+    @include onEvent {
+      outline: none;
+    }
+
+    &:valid {
+      background: $light-grey;
+    }
+
+    &::-webkit-input-placeholder,
+    &:-ms-input-placeholder,
+    &::placeholder {
+      color: $yellow;
+      font-weight: 600;
+      transition: all 200ms ease;
+    }
+  }
+}
+
+::placeholder {
+  color: $yellow;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $yellow;
+}
+
+::-ms-input-placeholder {
+  color: $yellow;
+}

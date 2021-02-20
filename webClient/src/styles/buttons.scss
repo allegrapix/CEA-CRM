@@ -1,0 +1,40 @@
+@import "~src/styles/colors.scss";
+@import "~src/styles/mixins.scss";
+
+.btn {
+  background: none;
+  border: none;
+  color: $text-dark;
+  font-size: 1.6rem;
+  border-radius: 50px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 200ms ease;
+
+  @include onEvent {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.btn-primary {
+  background: $yellow;
+  border: 1px solid $yellow;
+
+  @include onEvent {
+    box-shadow: 0 0 16px rgba($yellow, 0.3);
+  }
+
+  &:disabled {
+    background: $light-grey;
+    border: 1px solid $light-grey;
+
+    @include onEvent {
+      box-shadow: none;
+    }
+  }
+}
